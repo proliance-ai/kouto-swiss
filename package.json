@@ -1,6 +1,6 @@
 {
   "name": "kouto-swiss",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "version_date": "2017-02-26",
   "description": "A complete CSS framework for Stylus",
   "keywords": [
@@ -15,7 +15,7 @@
     "utility"
   ],
   "homepage": "http://kouto-swiss.io",
-  "github": "http://github.com/leny/kouto-swiss",
+  "github": "http://github.com/proliance-ai/kouto-swiss",
   "author": {
     "name": "leny",
     "email": "info@flatland.be",
@@ -81,15 +81,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/leny/kouto-swiss.git"
+    "url": "git://github.com/proliance-ai/kouto-swiss.git"
   },
   "bugs": {
-    "url": "https://github.com/leny/kouto-swiss/issues"
+    "url": "https://github.com/proliance-ai/kouto-swiss/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/leny/kouto-swiss/blob/master/LICENSE"
+      "url": "https://github.com/proliance-ai/kouto-swiss/blob/master/LICENSE"
     }
   ],
   "main": "lib/kouto-swiss.js",
@@ -100,26 +100,26 @@
     "node": "*"
   },
   "dependencies": {
-    "prefiks": "^0.3",
-    "stylus": "0.54.5"
+    "@proliance-ai/prefix-ts": "^1.1.5",
+    "stylus": "0.62.0"
   },
   "devDependencies": {
-    "chalk": "^1.1.1",
-    "cheerio": "^0.22.0",
-    "grunt": "^1.0.1",
-    "grunt-cli": "^1.1.0",
-    "grunt-concurrent": "^2.2.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-connect": "^1.0.1",
+    "chalk": "^5.3.0",
+    "cheerio": "^1.0.0-rc.12",
+    "grunt": "^1.6.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-concurrent": "^3.0.0",
+    "grunt-contrib-clean": "^2.0.1",
+    "grunt-contrib-connect": "^4.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-pug": "^1.0.0",
+    "grunt-contrib-pug": "^3.0.0",
     "grunt-contrib-stylus": "^1.2.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-mocha-cli": "^3.0.0",
-    "highlight.js": "^9.9.0",
-    "load-grunt-tasks": "^3.4.1",
-    "marked": "^0.3.5",
-    "mocha": "^3.1.2",
-    "should": "^11.1.1"
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-mocha-cli": "^7.0.0",
+    "highlight.js": "^11.9.0",
+    "load-grunt-tasks": "^5.1.0",
+    "marked": "^11.1.0",
+    "mocha": "^10.2.0",
+    "should": "^13.2.3"
   }
 }
