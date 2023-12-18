@@ -1,0 +1,57 @@
+name: Build and publish npm package
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@proliance-ai'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock'
+
+      - name: Cache node.js modules
+        id: cache-yarn
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - if: ${{ steps.cache-yarn.outputs.cache-hit != 'true' }}
+        name: List the state of node modules
+        continue-on-error: true
+        run: yarn list
+
+      - name: Install Dependencies
+        run: yarn install --non-interactive --frozen-lockfile --prefer-offline
+
+      - name: Configure npm for GitHub Packages
+        run: |
+          echo -e "Current .npmrc is:\n$(cat .npmrc)"
+          mv .npmrc-publish .npmrc
+          echo -e "Substituted .npmrc is:\n$(cat .npmrc)"
+
+      - name: Publish Package
+        run: |
+          yarn publish --non-interactive --no-git-tag-version --new-version ${{ github.ref_name }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
