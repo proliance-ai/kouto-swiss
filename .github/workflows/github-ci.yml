@@ -43,6 +43,8 @@ jobs:
 
       - name: Install Dependencies
         run: yarn install --non-interactive --frozen-lockfile --prefer-offline
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Configure npm for GitHub Packages
         run: |
