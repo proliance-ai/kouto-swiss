@@ -1,7 +1,7 @@
 {
   "name": "@proliance-ai/kouto-swiss",
   "version": "1.1.1",
-  "version_date": "2017-02-26",
+  "version_date": "2024-01-10",
   "description": "A complete CSS framework for Stylus",
   "keywords": [
     "Stylus",
@@ -77,6 +77,10 @@
     {
       "name": "EmmanuelBeziat",
       "url": "https://www.emmanuelbeziat.com"
+    },
+    {
+      "name": "proliance-ai",
+      "url": "https://www.datenschutzexperte.de/"
     }
   ],
   "repository": {

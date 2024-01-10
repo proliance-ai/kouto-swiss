@@ -1,5 +1,8 @@
 # kouto swiss: changelog
 
+## `1.1.1` / 2024-01-10
+* Updated dependencies by Proliance GmbH / Munich
+
 ## `1.1.0` / 2017-02-26
 
 * Add `flex-axis` mixin
